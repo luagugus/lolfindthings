@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <style>
+        body{
+            background-color: rgb(22, 22, 22);
+        }
+        @keyframes exampl2{
+            0%  {background-color:rgb(22, 22, 22); left:0px; top:0px;}
+            50%  {background-color:rgb(22, 22, 22); left:50px; top:0px;}
+            100%  {background-color:rgb(22, 22, 22); left:0px; top:0px;}
+        }
+        @keyframes main1{
+            0%  {left:0px; top:0px;}
+            50%  {left:100px; top:0px;}
+            100%  {left:0px; top:0px;}
+        }
+        .utp{
+            box-sizing: border-box;
+			border: solid 5px #ffffff;
+            margin-top: 70px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;  
+            position: relative;
+            width: 700px;
+            height: 100px;
+            background-color: rgb(22, 22, 22);
+            vertical-align: middle;
+            margin: 2 auto;
+            animation: exampl2 1s;
+            color: white;
+                
+        }
+        .utp:hover
+        {
+            color: black;
+            background-color: white
+        }
+        .ic{
+            box-sizing: border-box;
+			border: solid 5px #ffffff;
+            margin-top: 60px;
+            color: white;
+            transform: translate(-300px, 0px);
+        }
+        .ic:hover{
+            color: black;
+            background-color: white
+        }
+        .up{
+            box-sizing: border-box;
+			border: solid 5px #ffffff;
+            margin-top: -50px;
+            width: 150px;
+            height: 30px;
+            color: white;
+            transform: translate(-140px, 0px);
+        }
+        .up:hover{
+            color: black;
+            background-color: white
+        }
+        .up1{
+            box-sizing: border-box;
+			border: solid 5px #ffffff;
+            margin-top: 5px;
+            width: 150px;
+            height: 30px;
+            color: white;
+            transform: translate(-140px, 0px);
+        }
+        .up1:hover{
+            color: black;
+            background-color: white
+        }
+        .up2{
+            box-sizing: border-box;
+			border: solid 5px #ffffff;
+            margin-top: 5px;
+            width: 150px;
+            height: 30px;
+            color: white;
+            transform: translate(-140px, 0px);
+        }
+        .up2:hover{
+            color: black;
+            background-color: white
+        }
+        .name{
+            box-sizing: border-box;
+			border: solid 5px #ffffff;
+            margin-top: 5px;
+            width: 150px;
+            height: 30px;
+            color: white;
+            transform: translate(170px, -115px);
+            background-color: rgb(22, 22, 22);
+        }
+        .name:hover{
+            color: black;
+            background-color: white
+        }
+        .int{
+            box-sizing: border-box;
+			border: solid 5px #ffffff;
+            margin-top: 5px;
+            width: 60px;
+            height: 30px;
+            color: white;
+            transform: translate(170px, -115px);
+            background-color: rgb(22, 22, 22);
+        }
+        .int:hover{
+            color: black;
+            background-color: white
+        }
+        .going{
+            box-sizing: border-box;
+			border: solid 5px #ffffff;
+            margin-top: 5px;
+            width: 50px;
+            height: 50px;
+            color: white;
+            transform: translate(-50px, -50px);
+            background-color: rgb(22, 22, 22);
+        }
+        .going:hover{
+            color: black;
+            background-color: white
+            
+        }
+        .main{
+            box-sizing: border-box;
+			border: solid 5px #ffffff;
+            margin-top: 5px;
+            width: 79px;
+            height: 110px;
+            color: white;
+            transform: translate(-15px, -160px);
+            background-color: rgb(22, 22, 22);
+        }
+        .main:hover{
+            
+            color: black;
+            background-color: white;
+        }
+        
+    </style>
+    <body>
+        <center>
+        <div class="utp">gugu.gg</div>
+        <img class="ic" src= {{ icon }} width="50" height="50" alt="My Image">
+        <div class="up">Lv. {{ level }}</div>
+        <div class="up1">이름 : {{ name }}</div>
+        <div class="up2">승률 : {{ win }}%</div>
+
+
+        <form action="/jumjuk" method="post">
+            <input class="name" type="text" name="username" value="{{ name }}">
+            <input class="int" type="text" name="int" value=번호>
+            <input class="going" type="submit" value="Find">
+        </form>
+
+        <form action="/" method="post">
+            <input class="main" type="submit" value="매인으로">
+        </form>
+        </center>
+    </body>
+
+</html>

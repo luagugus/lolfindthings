@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <style>
+        body{
+            background-color: rgb(22, 22, 22);
+        }
+        @keyframes exampl2{
+            0%  {background-color:rgb(22, 22, 22); left:0px; top:0px;}
+            50%  {background-color:rgb(22, 22, 22); left:50px; top:0px;}
+            100%  {background-color:rgb(22, 22, 22); left:0px; top:0px;}
+        }
+        @keyframes exampl22{
+            0%  {left:0px; top:0px;}
+            50%  {left:0px; top:100px;}
+            100%  {left:0px; top:0px;}
+        }
+        @keyframes exampld{
+                0%  {left:0px; top:0px;
+                    transform: rotate( 80deg );}
+                40%  {left:300px; top:0px;}
+                60%  {left:300px; top:300px;}
+                80%  {left:0px; top:300px}
+                100%  {left:0px; top:0px}
+        }
+        .up
+        {
+            right: 50%;
+        }
+        .ic
+        {
+            right: 50%;
+        }
+        .utp{
+            box-sizing: border-box;
+			border: solid 5px #ffffff;
+            margin-top: 70px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;  
+            position: relative;
+            width: 700px;
+            height: 100px;
+            background-color: rgb(22, 22, 22);
+            vertical-align: middle;
+            margin: 2 auto;
+            animation: exampl2 1s;
+            color: white;
+            transition: all ease 1s;
+            font-size: 10px;
+            
+                
+        }
+        .utp:hover
+        {
+            color: black;
+            transform: rotate( -5deg );
+            background-color: white
+        }
+        .ic{
+            
+            box-sizing: border-box;
+			border: solid 5px #ffffff;
+            margin-top: 60px;
+            color: white;
+            transform: translate(-300px, 0px);
+            margin: 2 auto;
+            color: white;
+            transition: all ease 1s;
+        }
+        .ic:hover{
+            color: black;
+            background-color: white
+        }
+        .up1{
+            box-sizing: border-box;
+			border: solid 5px #ffffff;
+            margin-top: 5px;
+            width: 150px;
+            height: 30px;
+            color: white;
+            transform: translate(-140px, -50px);
+            transition: all ease 1s;
+        }
+        .up1:hover{
+            color: black;
+            background-color: white
+        }
+        .main{
+            box-sizing: border-box;
+			border: solid 5px #ffffff;
+            margin-top: 5px;
+            width: 79px;
+            height: 110px;
+            color: white;
+            transform: translate(-15px, -160px);
+            background-color: rgb(22, 22, 22);
+            transition: all ease 1s;
+            animation: exampld 1s;
+        }
+        .main:hover{
+            
+            color: black;
+            background-color: white;
+        }
+        .up2{
+            position: relative;
+            box-sizing: border-box;
+			border: solid 5px #ffffff;
+            color: white;
+            margin-top: 5px;
+            width: 650px;
+            transform: translate(-15px, 40px);
+            transition: all ease 1s;
+            animation: exampl22 1s;
+        }
+        .up2:hover{
+            color: black;
+            background-color: white;
+            transform: rotate( -5deg );
+        }
+        
+        
+    </style>
+    <body>
+        <center>
+        <div class="utp">gugu.gg</div>
+        <img class="ic" src= {{ icon }} width="50" height="50" alt="My Image">
+        <div class="up1">이름 : {{ name }}</div>
+       
+        {% for d in game %}
+            <div class="up2">이름 : {{ d.이름 }} 승패 : {{ d.승패 }} 레벨 : {{ d.챔프렙 }} [ {{d.킬}}/{{d.데스}}/{{d.어시}} ]</div>
+        {% endfor %}
+
+        <form action="/" method="post">
+            <input class="main" type="submit" value="매인으로">
+        </form>
+        </center>
+    </body>
+
+</html>
