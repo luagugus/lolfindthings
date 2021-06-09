@@ -17,20 +17,23 @@ def hello_world():
 
 @app.route('/post', methods=['POST'])
 def post():
-    value = request.form['username']
-    me = watcher.summoner.by_name(my_region, value)
-    my_ranked_stats = watcher.league.by_summoner(my_region, me['id'])
-    icon1 = "http://ddragon.leagueoflegends.com/cdn/11.10.1/img/profileicon/"+str(me["profileIconId"])+".png"    
+    try:
+        value = request.form['username']
+        me = watcher.summoner.by_name(my_region, value)
+        my_ranked_stats = watcher.league.by_summoner(my_region, me['id'])
+        icon1 = "http://ddragon.leagueoflegends.com/cdn/11.10.1/img/profileicon/"+str(me["profileIconId"])+".png"    
 
-    t = me['name']
-    c = me['summonerLevel']
-    my_matches = watcher.match.matchlist_by_account(my_region, me['accountId'])
+        t = me['name']
+        c = me['summonerLevel']
+        my_matches = watcher.match.matchlist_by_account(my_region, me['accountId'])
     
-    last_match = my_matches['matches'][0]
-    print(my_matches['matches'])
-    match_detail = watcher.match.by_id(my_region, last_match['gameId'])
-    participants = ["","","","","","","","","",""]
-    us = match_detail['participantIdentities']
+        last_match = my_matches['matches'][0]
+        print(my_matches['matches'])
+        match_detail = watcher.match.by_id(my_region, last_match['gameId'])
+        participants = ["","","","","","","","","",""]
+        us = match_detail['participantIdentities']
+    except:
+        return "검색오류. 서버에 그이름을 가진 유저가 없습니다."
 
     index = -1
 
